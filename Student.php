@@ -7,11 +7,14 @@
  */
 
 /**
- * Description of Student
+ * A class that represents a student
  *
- * @author user
+ * @author Matt Goerwell
  */
 class Student {
+    /*
+     * Student constructor
+     */
     function __construct() {
         $this->surname = '';
         $this->first_name = '';
@@ -19,14 +22,28 @@ class Student {
         $this->grades = array();
     }
     
+    /*
+     * Adds an email to the current student. Multiple emails are acceptable
+     * @param $which, The identifier for the email address
+     * @param $address, the actual email address
+     */
     function add_email($which,$address) {
         $this->emails[$which] = $address;
     }
 
+    /*
+     *  Adds a grade to the students academic record
+     * @param $grade the grade to be added.
+     */
     function add_grade($grade) {
         $this->grades[] = $grade;
     }
     
+    /*
+     * A funtction that calulates the average grade for the student 
+     * based on all that are available.
+     * @return the student's average grade.
+     */
     function average() {
         $total = 0;
         foreach ($this->grades as $value)
@@ -34,6 +51,11 @@ class Student {
         return $total / count($this->grades);
     }
     
+    /*
+     * The display method for the student. Displays their name, average
+     * and any email adresses associated with them.
+     * @return a string containing the student's details
+     */
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;
         $result .= ' ('.$this->average().")\n";
