@@ -43,7 +43,7 @@ and open the template in the editor.
             $third->surname = "Goerwell";
             $third->first_name = "Matthew";
             $third->add_email('home','matt@fake.com');
-            $third->add_email('work','mgoerwell@bcit.ca');
+            $third->add_email('work','mgoerwell@my.bcit.ca');
             $third->add_grade(100);
             $third->add_grade(80);
             $third->add_grade(60);
